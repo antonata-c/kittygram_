@@ -46,7 +46,7 @@ sudo cp -r путь_к_директории_с_фронтенд-приложен
 ```
 ***
 #### Gunicorn
-- � Создайте файл конфигурации юнита systemd для Gunicorn в директории
+- Создайте файл конфигурации юнита systemd для Gunicorn в директории
 /etc/systemd/system/. Назовите его по шаблону gunicorn_название_проекта.service:
 ```shell
 sudo nano /etc/systemd/system/gunicorn_название_проекта.service
