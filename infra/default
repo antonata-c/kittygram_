@@ -1,5 +1,7 @@
 server {
     server_name 158.160.17.220 taskianton.ddns.net;
+    
+    server_tokens off;    
 
     location /api/ {
         proxy_pass http://127.0.0.1:8000;
@@ -24,6 +26,8 @@ server {
 }
 server {
     server_name 158.160.17.220 kittygramanton.ddns.net;
+    
+    server_tokens off;
 
     location /api/ {
         proxy_pass http://127.0.0.1:8080;
@@ -36,11 +40,11 @@ server {
     }
 
     location /media/ {
-        root /var/www/kittygram;
+        root /var/www/infra_sprint1;
     }
 
     location / {
-        root   /var/www/kittygram;
+        root   /var/www/infra_sprint1;
         index  index.html index.htm;
         try_files $uri /index.html;
     }
@@ -58,24 +62,12 @@ server {
 server {
     if ($host = taskianton.ddns.net) {
         return 301 https://$host$request_uri;
-    } # managed by Certbot
-
-
-    listen 80;
-    server_name 158.160.17.220 taskianton.ddns.net;
-    return 404; # managed by Certbot
-
-}
-
-server {
+    }
     if ($host = kittygramanton.ddns.net) {
         return 301 https://$host$request_uri;
-    } # managed by Certbot
+    }
 
-
-    server_name 158.160.17.220 kittygramanton.ddns.net;
     listen 80;
-    return 404; # managed by Certbot
-
-
+    server_name 158.160.17.220 taskianton.ddns.net kittygramanton.ddns.net;
+    return 404;
 }
