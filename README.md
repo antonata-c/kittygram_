@@ -1,6 +1,5 @@
 `Python` `Django` `Django REST Framework` `Gunicorn` `Nginx` `SQLite3` `React`
 # Kittygram
-***
 ### Описание:
 Kittygram - социальная сеть для обмена фотографиями любимых питомцев, а именно, котиков.
 
